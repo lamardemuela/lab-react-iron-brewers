@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import beersJSON from "./../assets/beers.json";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 
 function BeerDetailsPage() {
@@ -38,6 +39,8 @@ function BeerDetailsPage() {
 
   // Structure and the content of the page showing the beer details. You can leave this as it is:
   return (
+    <>
+    <Navbar />
     <div className="d-inline-flex flex-column justify-content-center align-items-center w-100 p-4">
       {beer && (
         <>
@@ -64,6 +67,7 @@ function BeerDetailsPage() {
         </>
       )}
     </div>
+    </>
   );
 }
 

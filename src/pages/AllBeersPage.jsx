@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Search from "../components/Search";
 import beersJSON from "./../assets/beers.json";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 
 
@@ -36,6 +37,7 @@ function AllBeersPage() {
   // The logic and the structure for the page showing the list of beers. You can leave this as it is for now.
   return (
     <>
+      <Navbar />
       <Search />
 
       <div className="d-inline-flex flex-wrap justify-content-center align-items-center w-100 p-4">
@@ -43,7 +45,7 @@ function AllBeersPage() {
           beers.map((beer, i) => {
             return (
               <div key={i}>
-                <Link to={"/beers/:beerId"}>
+                <Link to={`/beers/${beer._id}`}>
                   <div className="card m-2 p-2 text-center" style={{ width: "24rem", height: "18rem" }}>
                     <div className="card-body">
                       <img

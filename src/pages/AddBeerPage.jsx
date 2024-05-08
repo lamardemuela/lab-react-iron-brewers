@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function AddBeerPage() {
   const navigate = useNavigate()
@@ -46,7 +47,7 @@ function AddBeerPage() {
     axios.post(`${import.meta.env.VITE_BACKEND_URL}/new`, newBeer)
     .then((response) => {
       //console.log("cerveza creada correctamente");
-      navigate("/")
+      navigate("/beers")
     })
     .catch((error)=> {
       console.log(error);
@@ -59,6 +60,7 @@ function AddBeerPage() {
   // Structure and the content of the page showing the form for adding a new beer. You can leave this as it is.
   return (
     <>
+    <Navbar />
       <div className="d-inline-flex flex-column w-100 p-4">
         <form onSubmit={handleSubmit}>
           <label>Name</label>

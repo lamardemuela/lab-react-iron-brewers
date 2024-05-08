@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import beersJSON from "./../assets/beers.json";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 
 function RandomBeersPage() {
@@ -32,6 +33,8 @@ function RandomBeersPage() {
 
   // The logic and the structure for the page showing the random beer. You can leave this as it is.
   return (
+    <>
+    <Navbar />
     <div className="d-inline-flex flex-column justify-content-center align-items-center w-100 p-4">
       <h2>Random Beer</h2>
 
@@ -60,6 +63,7 @@ function RandomBeersPage() {
         </>
       )}
     </div>
+    </>
   );
 }
 
